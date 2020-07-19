@@ -1,0 +1,271 @@
+html,body{
+    height: 100%;
+    width: 100%;
+    font-family: 'Poppins', sans-serif !important;
+    color: #ff7a45 !important;
+}
+
+div#map{
+    height: 100% !important;
+    width: 100% !important;
+}
+
+/*Override BS Class property*/
+.container{
+    height: 100%;
+}
+
+.align-middle-parent{
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+.align-middle-child{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.login-box-subwrapper {
+    padding: 10px;
+}
+
+.register-box-subwrapper{
+    padding: 10px;
+    text-align: center;
+}
+
+.bg-custom {
+    background: #ff7a45!important;
+    position: fixed;
+    width: 100%;
+    padding: 5px;
+}
+
+.brand-color, .bar-color {
+    color: white !important;
+}
+
+.border-color{
+    border-color: transparent !important;
+    outline: transparent !important;
+}
+
+a.nav-link {
+    color: white !important;
+}
+
+.bar-color {
+    font-size: 25px;
+}
+
+.icon-color, .greetings {
+    color: #ff7a45;
+    text-align: center;
+}
+
+h5.progresslabel {
+    font-size: 18px !important;
+}
+
+.content-size{
+    width: 95%;
+    margin: auto;
+}
+
+.img-size{
+    width: 100%;
+}
+
+.modal-size{
+    width: 90% !important;
+    margin: auto !important;
+}
+
+.store-imgs img{
+    height: 100px;
+    margin-right: 10px;
+}
+
+.store-imgs.text-center div > img {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+}
+
+.buttons-trash img {
+    margin-right: 10px;
+}
+
+.btn-trash {
+    margin: 0 0 10px;
+}
+
+.stores-wrapper {
+    height: 60%;
+    overflow: scroll;
+}
+
+.register-img span {
+    font-size: 6em;
+    padding: 5% 0;
+}
+
+.calling-code-prefix {
+    display: flex;
+}
+
+.country-code-img img {
+    width: 2em;
+}
+
+.country-code-img {
+    flex: 1;
+}
+
+.calling-code-number {
+    display: flex;
+    width: 100%;
+}
+
+.calling-code-prefix {
+    display: flex;
+}
+
+.country-code-img img {
+    width: 2em;
+}
+
+.country-code-img {
+    flex-grow: 0;
+    margin-right: 10px;
+}
+
+.calling-code-number select {
+    width: 5em;
+    margin-right: 10px;
+}
+
+#navbarSupportedContent{
+    margin: 0 12px;
+}
+
+button.btn.btn-primary.btn-block {
+    background: transparent;
+    border: 1px solid #ff7a45;
+    font-weight: bold;
+    box-shadow: none;
+    outline: none;
+    color: #ff7a45;
+}
+
+.navbar-brand {
+    font-size: 20px;
+}
+
+.dashboard .geofence-active
+{
+    text-align: center;
+}
+
+ul.options-navigation li {
+    list-style-type: none;
+    margin: 0 0 10px;
+}
+
+ul.options-navigation {
+    padding: 0;
+}
+
+.dashboard {
+    width: 80%;margin: auto;
+    }
+
+.geofence-active {
+    min-height: 35%;
+}
+
+ul.options-navigation li a {
+    width: 100%;
+    display: block;
+    font-size: 16px;
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+ul.options-navigation li a:hover {
+    background: #ff7a45;
+    color: white;
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+a{
+    color: #ff7a45;
+    text-decoration: none;
+}
+
+.btn-proceed {
+    background: transparent;
+    border: 1px solid #ff7a45;
+    box-shadow: none;
+    outline: none;
+    color: #ff7a45;
+    font-weight: bold;
+}
+
+.btn-proceed:hover, .btn-proceed:focus, .btn-proceed:visited, .btn-proceed:active{
+    background: #ff7a45 !important;
+    transition: 0.5s;
+    border: 1px solid #ff7a45 !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+button.close {
+    border: 0;
+    outline: none;
+    box-shadow: none;
+}
+
+.options {
+    height: 35%;
+}
+
+.contacts-body {
+    min-height: 25em;
+    max-height: 25em;
+    overflow: scroll;
+}
+
+.btn-previous {
+    box-shadow: none !important;
+    color: #ff7a45;
+    outline: none !important;
+}
+
+ul.contacts-list li {
+    list-style-type: none;
+    margin: 10px 0;
+    padding: 10px;
+    border-bottom: 1px solid #adadad;
+}
+
+ul.contacts-list {
+    padding: 0;
+}
+
+.pac-container {
+    z-index: 10000 !important;
+}
+
+.source-options {
+    text-align: center;
+    display: flex;
+}
+
+.source-options div {
+    flex: 1;
+}

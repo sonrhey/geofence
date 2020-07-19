@@ -1,0 +1,27 @@
+.register-header h4 {
+    color: #ff7a45;
+}
+
+.register-img span {
+    color: #ff7a45;
+    height: 100px;
+    width: 100px;
+    background-size:cover;
+    background-repeat:no-repeat;
+    display: block;
+    margin: auto;
+    background-position: center;
+    border-radius: 50%;
+}
+
+button.btn.btn-link {
+    color: #ff7a45;
+}
+
+select, input::placeholder, input {
+    color: #ff7a45 !important;
+}
+
+.upload button{
+    padding-top: 0;
+}

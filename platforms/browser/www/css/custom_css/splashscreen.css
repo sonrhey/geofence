@@ -1,0 +1,45 @@
+body, a{
+    font-family: 'Poppins', sans-serif !important;
+    color: #ff7a45 !important;
+}
+.img-style img {
+    width: 10em;
+}
+
+.img-style {
+    text-align: center;
+}
+
+.logo-box {
+    height: 50%;
+}
+
+.container {
+    text-align: center;
+}
+
+.existing-account {
+    display: flex;
+}
+
+.existing-account div {
+    flex: 1;
+}
+
+.existing-account div:nth-child(even) {
+    text-align: right;
+}
+
+.existing-account div:nth-child(odd) {
+    text-align: left;
+}
+
+.footer-container {
+    margin: auto;
+    width: 85%;
+    height: 20%;
+}
+
+/* .action-box {
+    height: 70%;
+} */

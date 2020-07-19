@@ -1,0 +1,40 @@
+body{
+    color: #ff7a45;
+}
+
+.login-box-subwrapper {
+    height: 100%;
+}
+
+.login-header {
+    text-align: center;
+}
+
+.height-top {
+    min-height: 10%;
+}
+
+.login-box {
+    height: 70%;
+}
+
+.forgot-password {
+    text-align: center;
+}
+
+input[name="username"]::placeholder,
+input[name="password"]::placeholder{
+    color: #ff7a45;
+}
+
+.btn-login {
+    background: transparent;
+    box-shadow: none;
+    border: 1px solid #ff7a45;
+    color: #ff7a45;
+    font-weight: bold;
+}
+
+.logo{
+    width: 30px;
+}

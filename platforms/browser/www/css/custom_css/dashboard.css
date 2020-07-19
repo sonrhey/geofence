@@ -1,0 +1,13 @@
+.user-profile{
+    height: 100px;
+    width: 100px;
+    /* background: red; */
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+}
+
+.user-welcome{
+    text-transform: capitalize;
+}
