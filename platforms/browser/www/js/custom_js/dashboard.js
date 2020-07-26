@@ -17,9 +17,25 @@ $(document).ready(function(){
     var userprofile = getParameterByName('user_profile');
     var ipconfig = ipaddress();
     var showname = $(function(){
-        $('.user-profile').css({"background-image":"url('"+ipconfig+"/"+userprofile+"')", "background-size":"cover", "border":"2px solid #ff7a45"});
+        $('.user-profile').css({"background-image":"url('"+ipconfig+""+userprofile+"')", "background-size":"cover", "border":"2px solid #ff7a45"});
         $('.user-welcome').html('Welcome <b>'+getaccountname+'</b>!');
         // geofencing();
+    });
+
+    $('#geofence-settings-form').on('submit', function(e){
+      e.preventDefault();
+      var information = $(this).serialize()+"&user_id="+getaccountid;
+      var url = ipconfig+"geofence.php";
+      $.ajax({
+        type: "POST",
+        url: url,
+        data: information,
+        success: function(response){
+          var decode = $.parseJSON(response);
+          alert(decode.message);
+          location.reload();
+        }
+      });
     });
 
     //file uplading
@@ -86,9 +102,9 @@ function initmap() {
   var autocomplete = new google.maps.places.Autocomplete(input);
     google.maps.event.addListener(autocomplete, 'place_changed', function () {
         var place = autocomplete.getPlace();
-        alert(place.geometry.location.lat());
-        // document.getElementById('city2').value = place.name;
-        // document.getElementById('cityLat').value = place.geometry.location.lat();
-        // document.getElementById('cityLng').value = place.geometry.location.lng();
+        var lat = place.geometry.location.lat();
+        var lng = place.geometry.location.lng();
+        $('[name="geofence_latitude"]').val(lat);
+        $('[name="geofence_longitude"]').val(lng);
     });
 }
