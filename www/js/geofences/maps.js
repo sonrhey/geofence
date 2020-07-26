@@ -1,29 +1,14 @@
-// // var crd = pos.coords;
-// var latitude = 10.287681;
-// var longitude = 123.8969322;
-
-// // var latitude = crd.latitude;
-// // var longitude = crd.longitude;
-
-// var mapObj = new GMaps({
-//     el: '#map',
-//     lat: latitude,
-//     lng: longitude
-// });
-
-
 var options = {
     enableHighAccuracy: true,
     timeout: 5000,
     maximumAge: 0
 };
   
-function success(pos) {
-    // $("#location").modal("show");
-    var crd = pos.coords;
-    var latitude = crd.latitude;
-    var longitude = crd.longitude;
-
+function activate(pos, getaccountid) {
+    $('#location').modal("show");
+    var latitude = pos.geofence_latitude;
+    var longitude = pos.geofence_longitude;
+    var radius = Number(pos.geofence_radius);
     var mapObj = new GMaps({
         el: '#map',
         lat: latitude,
@@ -36,7 +21,7 @@ function success(pos) {
     var circle = mapObj.drawCircle({
     lat: latitude,
     lng: longitude,
-    radius: 500,
+    radius: radius,
     fillColor: 'yellow',
     fillOpacity: 0.5,
     strokeWeight: 0,
@@ -51,10 +36,11 @@ function success(pos) {
                 var marker = mapObj.addMarker({
                 lat: position.coords.latitude,
                 lng: position.coords.longitude,
-                draggable: false,
+                draggable: true,
                 fences: [circle],
                 outside: function(marker, fence) {
                     alert('This marker has been moved outside of its fence');
+                    sendMessageToContacts(getaccountid);
                 }
                 });
 
@@ -66,8 +52,14 @@ function success(pos) {
 
 }
 
-function error(err) {
-console.warn(`ERROR(${err.code}): ${err.message}`);
-}
+function sendMessageToContacts(getaccountid){
+    var ipconfig = ipaddress();
+    $.ajax({
+        type: "POST",
+        url: ipconfig+"sendmessage.php",
+        data: {user_id:getaccountid},
+        success: function(response){
 
-navigator.geolocation.getCurrentPosition(success, error, options);
+        }
+    });
+}

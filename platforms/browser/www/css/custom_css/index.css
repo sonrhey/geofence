@@ -6,7 +6,7 @@ html,body{
 }
 
 div#map{
-    height: 100% !important;
+    height: 25em !important;
     width: 100% !important;
 }
 

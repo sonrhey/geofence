@@ -17,9 +17,26 @@ $(document).ready(function(){
     var userprofile = getParameterByName('user_profile');
     var ipconfig = ipaddress();
     var showname = $(function(){
+      
+   
         $('.user-profile').css({"background-image":"url('"+ipconfig+""+userprofile+"')", "background-size":"cover", "border":"2px solid #ff7a45"});
         $('.user-welcome').html('Welcome <b>'+getaccountname+'</b>!');
         // geofencing();
+    });
+
+    $('.btn-yes').on('click', function(){
+      var information = $(this).serialize()+"&user_id="+getaccountid;
+      var url = ipconfig+"activategeofence.php";
+      $.ajax({
+        type: "GET",
+        url: url,
+        data: information,
+        success: function(response){
+          $('#activate').modal("hide");
+          var decode = $.parseJSON(response);
+          activate(decode, getaccountid);
+        }
+      });
     });
 
     $('#geofence-settings-form').on('submit', function(e){
@@ -107,4 +124,33 @@ function initmap() {
         $('[name="geofence_latitude"]').val(lat);
         $('[name="geofence_longitude"]').val(lng);
     });
+
+  //put current loc lat
+  fillupcurrentlocation();
+}
+
+function fillupcurrentlocation(){
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      $.ajax
+       ({
+          type: "GET",
+          url: "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyD-hdiDkYUMd96dLg2JLpah8EbrbvbakwM&latlng="+position.coords.latitude+","+position.coords.longitude+"&sensor=true",
+          success: function(data){
+          var long_name = data.results[0].address_components[0].long_name;
+          var formatted_address = data.results[0].formatted_address;
+          var location_lat = data.results[0].geometry.location.lat;
+          var location_long = data.results[0].geometry.location.lng;
+          var final_loc = data.results[0].address_components[0].long_name+", "+formatted_address;
+          $('[name="place"]').val(final_loc);
+          $('[name="geofence_latitude"]').val(location_lat);
+          $('[name="geofence_longitude"]').val(location_long);
+          },
+          error: function(data){
+            alert("Failed to get current location");
+            window.location.reload();
+          }
+        });
+    });
+  }
 }
